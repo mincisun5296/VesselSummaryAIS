@@ -24,9 +24,10 @@
 #' \item{TransceiverClass}{Class of AIS transceiver}
 #' }
 
-
+#' @export
 #' @source {Created through the AIS data of 2022-01-03 to serve as an example}
-#' @examples
-#' data(AISdata)
+#' @examples data(AISdata)
 
-"AISdata"
+
+AISdata <- read.csv("test.csv", header = T)
+
