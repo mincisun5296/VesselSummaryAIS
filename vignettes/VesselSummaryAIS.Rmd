@@ -17,3 +17,9 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(VesselSummaryAIS)
 ```
+
+```{r}
+ls(name = paste("package", "VesselSummaryAIS", sep = ":"))
+#data(package = "VesselSummaryAIS" )
+head(AISdata)
+```
