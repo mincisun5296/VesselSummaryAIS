@@ -11,7 +11,7 @@
 #'
 #' @examples summarizeship(AISdata, maxLON=-80, minLON=-100, maxLAT= 40, minLAT= 20)
 #' @examples summarizeship(AISdata)
-summarizeship <- function(AISdata, maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20) {
+summarizeship <- function(AISdata = AISdata, maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20) {
 
   # build new column and specify ship types
   AISdata['shiptype'] <- 0
