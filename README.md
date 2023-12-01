@@ -5,7 +5,7 @@
 
 ## Background 
 
-The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite its public availability, the AIS data may not be intuitive to use because all the vessels' information is squeezed in a csv file.\ 
+The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite its public availability, the AIS data may not be intuitive to use because all the vessels' information is squeezed in a csv file. 
 
 Therefore, this package is designed to analyze daily AIS data, providing a tool for practitioners to better understand the vessel activities and vessel compositions within a specified geographical area.
 
