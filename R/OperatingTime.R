@@ -12,8 +12,8 @@
 #'
 #' @examples operatingtime(AISdata)
 #' @examples operatingtime(AISdata, activityspeed = 5)
-#' @examples operatingtime(AISdata, activityspeed = 5 , maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20)
-operatingtime <- function(AISdata, activityspeed = 3, maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20){
+#' @examples operatingtime(AISdata, activityspeed = 5 , maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27){
 
   # Filtering: study area
   AISdata <- AISdata[AISdata$LON > minLON & AISdata$LON < maxLON
@@ -36,6 +36,7 @@ operatingtime <- function(AISdata, activityspeed = 3, maxLON = -90, minLON = -11
   # list of unique MMSI
   MMSIlist <- unique(AISdata$MMSI)
 
+  num = 0
   for (ID in MMSIlist){
     # generate an AIS data frame for a certain ship (MMSI is ID)
     specific_MMSI_AISdata <- AISdata[AISdata$MMSI == ID, ]

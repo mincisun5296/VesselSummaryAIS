@@ -12,8 +12,8 @@
 #'
 #' @examples speeddist(AISdata)
 #' @examples speeddist(AISdata, 'Fishing')
-#' @examples speeddist(AISdata, studyship = 'Fishing', maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20)
-speeddist <- function(AISdata, studyship = 'Cargo', maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20){
+#' @examples speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+speeddist <- function(AISdata, studyship = 'Cargo', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27){
   # Check studyship
   if (!(studyship %in% c('Cargo', 'Fishing', 'Military', 'Not_available', 'Passenger', 'Pleasure', 'Tanker', 'Tugboat', 'Others'))){
     stop('studyship is not recorded in the U.S. Coast Guard. Please input Cargo, Fishing, Military, Not_available, Passenger, Pleasure, Tanker, Tugboat, or Others (First letter is capital)')
