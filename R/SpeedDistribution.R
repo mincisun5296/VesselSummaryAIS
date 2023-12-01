@@ -32,7 +32,7 @@ speeddist <- function(AISdata, studyship = 'Cargo', maxLON = -90, minLON = -110,
 
   # Histogram of speed ##############################
   # SOG means speed over ground (extract the speed for a certain type and exclude NA)
-  SOG_data <- AISdata$SOG[!is.na(AISdata$SOG)]
+  SOG_data <- AISdata$SOG[!is.na(AISdata$SOG) & AISdata$SOG < 40]
 
   # Create a histogram
   hist(SOG_data, main = paste("Speed distribution for", studyship),
