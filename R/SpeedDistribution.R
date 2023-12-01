@@ -35,7 +35,7 @@ speeddist <- function(AISdata, studyship = 'Cargo', maxLON = -90, minLON = -110,
   SOG_data <- AISdata$SOG[!is.na(AISdata$SOG)]
 
   # Create a histogram
-  hist(SOG_data, main = paste("Histogram of SOG for", studyship),
+  hist(SOG_data, main = paste("Speed distribution for", studyship),
      xlab = "Speed Over Ground (SOG) (Knots)", ylab = "Frequency of Observed Signals", col = "lightblue", border = "black")
 
 }
