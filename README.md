@@ -22,7 +22,7 @@ You can also use the real AIS data from the [website](https://marinecadastre.gov
 
 Example of Data Structure: 
 |MMSI|BaseDateTime|LAT|LON|SOG|COG|Heading|
-|---|---|---|---|---|------| 
+|---|---|---|---|---|---| 
 |338148873|2022-01-03T00:00:00|33.60716|-117.91483|0.0|280.0|511|
 
 
