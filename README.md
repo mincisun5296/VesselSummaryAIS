@@ -5,19 +5,20 @@
 
 ## Background 
 
-The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite its public availability, the AIS data may not be intuitive to use because all the vessels' information is squeezed in a csv file. 
+The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite its public availability, the AIS data may not be intuitive to use because all the vessels' information is crammed into a csv file. 
 
-Therefore, this package is designed to analyze daily AIS data, providing a tool for practitioners to better understand the vessel activities and vessel compositions within a specified geographical area.
+Therefore, this package is designed to analyze the daily AIS data, providing a tool for practitioners to better understand the vessel activities and vessel compositions within a specified geographical area.
 
 ## Installation
-Please install the developed package from my GitHub.
+Please install the developed package from GitHub.\
 `install.packages("devtools")`
 `devtools::install_github("mincisun5296/VesselSummaryAIS")`
 
 ## Introduction of AIS data 
 
-The AIS data consists of vessel and operational information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.\
-You may use the command-- `?AISdata` for more information.\
+The AIS data comprises details about ship characteristics and navigation information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.
+
+You may use the command-- `?AISdata` for more information.
 
 You can also use the real AIS data from the [website](https://marinecadastre.gov/ais/), unzip the file and utilize the following command to load the data:`AISdata <- read.csv("dataname.csv", header = T)`
 
