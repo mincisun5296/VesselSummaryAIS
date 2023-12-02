@@ -24,9 +24,7 @@ Example of Data Structure:
 
 | MMSI | BaseDateTime | LAT | LON | SOG | COG | Heading | VesselName | IMO | CallSign  | VesselType | Status | Length | Width | Draft | 
 Cargo | TransceiverClass
-
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |
-
 | 338148873 | 2022-01-03T00:00:00 | 33.60716| -117.91483 | 0.0 | 280.0 | 511 |
 EAGLE | IMO8207721 | WTD4583 | 31 | 0 | 28 | 11 | 3.3 | 52 | A
 
