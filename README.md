@@ -26,7 +26,8 @@ Example of Data Structure:
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 338148873 | 2022-01-03T00:00:00 | 33.60716 | -117.91483 | 0.0 | 280.0 | 511 | EAGLE | IMO8207721 | WTD4583 | 31 | 0 | 28 | 11 | 3.3 | 52 | A |
 
-
+*VesselType* is a code to determine the ship type based on this [document](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf), where the ship type includes
+**Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat**. 
 
 
 
