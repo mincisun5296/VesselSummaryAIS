@@ -16,16 +16,19 @@ Please install our developed package from GitHub.\
 
 ## Introduction of AIS data 
 
-The AIS data comprises details about ship characteristics and navigation information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.
-
-| MMSI | BaseDateTime | LAT | LON | SOG | COG | Heading |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |----------- | 
-| 338148873 | 2022-01-03T00:00:00 | 33.60716 | -117.91483 | 0.0 | 280.0 | 511|
-
-
-You may use the command-- `?AISdata` for more information.
+The AIS data comprises details about ship characteristics and navigation information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.You may use the command-- `?AISdata` for more information.
 
 You can also use the real AIS data from the [website](https://marinecadastre.gov/ais/)(click *AIS Broadcast Points* and choose a desirable day), unzip the file and utilize the following command to load the data:`AISdata <- read.csv("dataname.csv", header = T)`
+
+Example of Data Structure: 
+|MMSI|BaseDateTime|LAT|LON|SOG|COG|Heading|
+|---|---|---|---|---|------| 
+|338148873|2022-01-03T00:00:00|33.60716|-117.91483|0.0|280.0|511|
+
+
+
+
+
 
 
 ## Functions:
