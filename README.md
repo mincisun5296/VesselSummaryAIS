@@ -14,6 +14,14 @@ Please install the developed package from my GitHub.
 `install.packages("devtools")`
 `devtools::install_github("mincisun5296/VesselSummaryAIS")`
 
+## Introduction of AIS data 
+
+The AIS data consists of vessel and operational information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.\
+You may use the command-- `?AISdata` for more information.\
+
+You can also use the real AIS data from the [website](https://marinecadastre.gov/ais/), unzip the file and utilize the following command to load the data:`AISdata <- read.csv("dataname.csv", header = T)`
+
+
 ## Functions:
 ### 1. Vessel Summary within a Region
 The `summarizeship` function  allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimensions of each ship type.\
@@ -32,11 +40,11 @@ The `operatingtime` function  analyzes the cumulative operational time of each d
 default speed is 3 knots.\
 From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.
 
-*Please be aware that this function might entail a lengthy computational process as it meticulously calculates the time for each vessel. So be careful about the specified region*\
+*Please be aware that this function might entail a lengthy computational process as it meticulously calculates the time for each vessel. So be careful about the specified region*
 
 **usage:**
-`totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
+`totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`\
 Operating time for each vessel:
-`head(totaltime[[1]], 5)`
+`head(totaltime[[1]], 5)`\
 Operating time for each ship type:
 `head(totaltime[[2]])`
