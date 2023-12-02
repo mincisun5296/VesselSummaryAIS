@@ -7,10 +7,10 @@
 operatingtime(
   AISdata,
   activityspeed = 3,
-  maxLON = -90,
-  minLON = -110,
+  maxLON = -94,
+  minLON = -96,
   maxLAT = 30,
-  minLAT = 20
+  minLAT = 27
 )
 }
 \arguments{
@@ -35,5 +35,5 @@ Calculate the total operating time for each vessel and each ship type
 \examples{
 operatingtime(AISdata)
 operatingtime(AISdata, activityspeed = 5)
-operatingtime(AISdata, activityspeed = 5 , maxLON = -90, minLON = -110, maxLAT = 30, minLAT = 20)
+operatingtime(AISdata, activityspeed = 5 , maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
 }

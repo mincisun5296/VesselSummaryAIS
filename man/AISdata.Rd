@@ -17,7 +17,7 @@ A data frame with 99999 rows and 17 variables. However, please note that in the 
 \item{VesselName}{Name as shown on the station radio license }
 \item{IMO}{International Maritime Organization Vessel number}
 \item{CallSign}{Call sign as assigned by Federal Communications Commission}
-\item{VesselType}{Vessel type as defined in NAIS specifications. You can use classify(VesselType) to get the ship type}
+\item{VesselType}{The value can represent 9 ship types, including Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat. Please see this document for detailed categorization: https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pd}
 \item{Status}{Navigation status as defined by the COLREGS}
 \item{Length}{Length of vessel in meters}
 \item{Width}{Width of vessel in meters}
