@@ -44,11 +44,11 @@ After obtaining the AIS data from the [website](https://marinecadastre.gov/ais/)
 ```{r}
 head(AISdata, 3) # shows first 3 rows
 ```
-*VesselType* is a code to determine the ship type based on Reference (3), where the ship type includes
-Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat. 
+*VesselType* is a code to determine the ship type based on Reference [(3)]((https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf)), where the ship type includes
+**Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat**. 
 
 ## Function:
-### 1.  Vessel Summary within a Region 
+### 1.  Vessel Summary within a Specified Geographical Area
 The `summarizeship` function allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimensions of each ship type.
 ```{r}
 summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
@@ -62,7 +62,7 @@ plotvessel(AISdata, studyship = 'Cargo', maxLON = -94, minLON = -96, maxLAT = 30
 ```
 
 ### 3. Speed Distribution
-The `speeddist` function creates a histogram illustrating the speed profile of a specific ship within the designated study area. Users have the flexibility to input their preferred ship type, with the default set to Cargo.
+The `speeddist` function creates a histogram illustrating the speed distribution of a specific ship within the study area. Users have the flexibility to input their preferred ship type, with the default set to Cargo.
 
 ```{r}
 speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
