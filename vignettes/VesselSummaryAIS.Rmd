@@ -16,16 +16,16 @@ knitr::opts_chunk$set(
 ## This is the introduction for R package: VesselSummaryAIS 
 ## Background 
 
-The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite its public availability, the AIS data may not be intuitive to use because all the vessels' information is squeezed in a csv file.\ 
+The U.S. Coast Guard has collected dynamic vessel traffic data, or Automatic Identification System (AIS) data, to ensure the safety of vessel travels in North America. Despite the public availability of the AIS data, it may not be intuitive to use because all the vessels' information is crammed into a csv file. 
 
 **Therefore, this package is designed to analyze daily AIS data, providing a tool for practitioners to better understand the vessel activities and vessel compositions within a specified geographical area.**
 
-<Reference>\
-(1)You can download [real AIS data here](https://marinecadastre.gov/ais/) by click *AIS Broadcast Points* and choose a desirable day.\
-(2)This [file](https://coast.noaa.gov/data/marinecadastre/ais/data-dictionary.pdf) introduces the funciton of each column.\
-(3)Ship types in AIS data are represented by a specific [code](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf)
+Note:\
+(1)You can download [real AIS data here](https://marinecadastre.gov/ais/) by clicking *AIS Broadcast Points* and choose a desirable day.\
+(2)This [document](https://coast.noaa.gov/data/marinecadastre/ais/data-dictionary.pdf) introduces the function of each column in AIS data.\
+(3)Ship types in AIS data are represented by a specific [code](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf) in the *VesselType* column.
 
-
+## Set Up
 ```{r setup}
 # If you do not have VesselSummaryAIS, use devtools to download.
 # install.packages("devtools")
@@ -38,18 +38,19 @@ library(VesselSummaryAIS)
 The AIS data consists of vessel and operational information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.\
 You may use the command-- `?AISdata` for more information.\
 
-After obtaining the AIS data from the [website](https://marinecadastre.gov/ais/), unzip the file and utilize the following command to load the data:`AISdata <- read.csv("dataname.csv", header = T)`
+You can also download the AIS data from the [website](https://marinecadastre.gov/ais/), and unzip the file and utilize the following command to load the data:
+`AISdata <- read.csv("dataname.csv", header = T)`
 
 
 ```{r}
 head(AISdata, 3) # shows first 3 rows
 ```
-*VesselType* is a code to determine the ship type based on Reference [(3)]((https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf)), where the ship type includes
-**Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat**. 
+The column--*VesselType* is a code to determine the ship type based on this [ document](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf), where the ship type includes
+*Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat*. 
 
 ## Function:
 ### 1.  Vessel Summary within a Specified Geographical Area
-The `summarizeship` function allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimensions of each ship type.
+The `summarizeship` function allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimension (length and width) of each ship type.
 ```{r}
 summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
 
@@ -69,11 +70,11 @@ speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 3
 ```
 
 ### 4. Operating Time Analysis
-The `operatingtime` function  analyzes the cumulative operational time of each distinct ship and ship type. Users have the flexibility to set the operational mode by specifying the speed threshold with the parameter `activityspeed`. The 
-default speed is 3 knots.\
-From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.\
+The `operatingtime` function  analyzes the cumulative operational time of each distinct ship and ship type. Users can set the speed threshold with the parameter `activityspeed` to define the operation mode. The default speed is 3 knots (meaning only the activity with speed of over 3 knots will be considered as operation mode).
 
-**Please be aware that this function might entail a lengthy computational process as it meticulously calculates the time for each vessel. So be careful about the specified region**
+From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.
+
+Please be aware that this function might entail a **Lengthy** computational process as it meticulously calculates the time for each vessel. So be careful about the specified region.
 
 ```{r}
 # for Vessel

@@ -26,14 +26,14 @@ Example of Data Structure:
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 338148873 | 2022-01-03T00:00:00 | 33.60716 | -117.91483 | 0.0 | 280.0 | 511 | EAGLE | IMO8207721 | WTD4583 | 31 | 0 | 28 | 11 | 3.3 | 52 | A |
 
-*VesselType* is a code to determine the ship type based on this [document](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf), where the ship type includes
+The column--*VesselType* is a code to determine the ship type based on this [document](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf), where the ship type includes
 **Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat**. 
 
 
 
 ## Functions:
 ### 1. Vessel Summary within a Specified Geographical Area
-The `summarizeship` function  allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimensions of each ship type.\
+The `summarizeship` function  allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimension of each ship type.\
 **usage:** `summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
 
 ### 2. Vessel Signal Plotting
