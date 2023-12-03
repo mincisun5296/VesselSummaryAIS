@@ -28,4 +28,5 @@
 #' @source {Created through the AIS data of 2022-01-03 to serve as an example}
 
 "AISdata"
+AISdata <- read.csv("AISdata.csv", header = T)
 

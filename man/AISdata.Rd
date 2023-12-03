@@ -5,7 +5,7 @@
 \alias{AISdata}
 \title{Description of AISdata}
 \format{
-A data frame with 99999 rows and 17 variables. However, please note that in the VesselSummaryAIS package, only variables of MMSI, BaseDataTime, LAT, LON, SOG, VesselType, Length, and Width are used.
+A data frame with 99999 rows and 17 variables. In the VesselSummaryAIS package, only variables of MMSI, BaseDataTime, LAT, LON, SOG, VesselType, Length, and Width are used.
 \describe{
 \item{MMSI}{Maritime Mobile Identity value, which is an ID of a vessel.}
 \item{BaseDataTime}{The UTC data and time that location signal is received}
