@@ -4,13 +4,7 @@
 \alias{summarizeship}
 \title{Summarize the number and dimensions for each shiptype within study areas}
 \usage{
-summarizeship(
-  AISdata = AISdata,
-  maxLON = -90,
-  minLON = -110,
-  maxLAT = 30,
-  minLAT = 20
-)
+summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
 }
 \arguments{
 \item{AISdata}{Automatic Identification System (AIS) data downloaded from the U.S. Coast Guard (https://marinecadastre.gov/ais/). You can use the command: AISdata <- read.csv("AISdataname.csv", header = T) and input AISdata in the function}
@@ -30,6 +24,6 @@ A data frame with the number and dimension of ships for each ship type
 Summarize the number and dimensions for each shiptype within study areas
 }
 \examples{
-summarizeship(AISdata, maxLON=-80, minLON=-100, maxLAT= 40, minLAT= 20)
+summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
 summarizeship(AISdata)
 }
