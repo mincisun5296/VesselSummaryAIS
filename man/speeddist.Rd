@@ -7,10 +7,10 @@
 speeddist(
   AISdata,
   studyship = "Cargo",
-  maxLON = -94,
-  minLON = -96,
+  maxLON = -94.5,
+  minLON = -95,
   maxLAT = 30,
-  minLAT = 27
+  minLAT = 29
 )
 }
 \arguments{
@@ -35,5 +35,5 @@ Plot speed histogram for a ship type
 \examples{
 speeddist(AISdata)
 speeddist(AISdata, 'Fishing')
-speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+speeddist(AISdata, studyship = 'Fishing', maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
 }

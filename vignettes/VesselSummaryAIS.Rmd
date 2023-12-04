@@ -51,21 +51,21 @@ The column--*VesselType* is a code to determine the ship type based on this [ do
 ### 1.  Vessel Summary within a Specified Geographical Area
 The `summarizeship` function allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimension (length and width) of each ship type.
 ```{r}
-summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+summarizeship(AISdata, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
 
 ```
 
 ### 2.  Vessel Signal Plotting
 The `plotvessel` function  generates a visual representation of AIS signal locations. Note that the default ship type is Cargo, but users can input their preferred ship type as well. Other available options include Fishing, Military, Not_available,Others,Passengers,Pleasure,Tanker,and Tugboat within the function parameters.
 ```{r}
-plotvessel(AISdata, studyship = 'Cargo', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+plotvessel(AISdata, studyship = 'Cargo', maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
 ```
 
 ### 3. Speed Distribution
 The `speeddist` function creates a histogram illustrating the speed distribution of a specific ship within the study area. Users have the flexibility to input their preferred ship type, with the default set to Cargo.
 
 ```{r}
-speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+speeddist(AISdata, studyship = 'Fishing', maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
 ```
 
 ### 4. Operating Time Analysis
@@ -77,7 +77,7 @@ Please be aware that this function might entail a **Lengthy** computational proc
 
 ```{r}
 # for Vessel
-totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27 )
+totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29 )
 head(totaltime[[1]], 5) # show first 5 rows
 ```
 

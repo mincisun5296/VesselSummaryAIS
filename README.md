@@ -35,15 +35,15 @@ The column--*VesselType* is a code to determine the ship type based on this [doc
 ## Functions:
 ### 1. Vessel Summary within a Specified Geographical Area
 The `summarizeship` function  allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimension of each ship type.\
-**usage:** `summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
+**usage:** `summarizeship(AISdata, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)`
 
 ### 2. Vessel Signal Plotting
 The `plotvessel` function  generates a visual representation of AIS signal locations. Note that the default ship type is Cargo, but users can input their preferred ship type as well. Other available options include `Fishing, Military, Not_available,Others,Passengers,Pleasure,Tanker,and Tugboat` within the function parameters.\
-**usage:** `plotvessel(AISdata, studyship = 'Cargo', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
+**usage:** `plotvessel(AISdata, studyship = 'Cargo', maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)`
 
 ### 3. Speed Distribution
 The `speeddist` function creates a histogram illustrating the speed distribution of a specific ship within the study area. Users have the flexibility to input their preferred ship type, with the default set to Cargo.\
-**usage:** `speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
+**usage:** `speeddist(AISdata, studyship = 'Fishing', maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)`
 
 ### 4. Operating Time Analysis
 The `operatingtime` function  analyzes the cumulative operational time of each distinct ship and ship type. Users have the flexibility to set the operational mode by specifying the speed threshold with the parameter `activityspeed`. The 
@@ -51,4 +51,4 @@ default speed is 3 knots.\
 From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.
 
 **usage:**
-`totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
+`totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)`
