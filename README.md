@@ -13,7 +13,10 @@ Therefore, this package is designed to analyze the daily AIS data, providing a t
 ## Installation
 Please install our developed package from GitHub.\
 `install.packages("devtools")`
-`devtools::install_github("mincisun5296/VesselSummaryAIS")`
+`devtools::install_github("mincisun5296/VesselSummaryAIS", build_vignettes = TRUE)`
+
+*This package provides a vignette for better illustrations. Remember to include vignette while installing (build_vignettes = TRUE)*
+
 
 ## Introduction of AIS data 
 
