@@ -12,8 +12,8 @@
 #'
 #' @examples operatingtime(AISdata)
 #' @examples operatingtime(AISdata, activityspeed = 5)
-#' @examples operatingtime(AISdata, activityspeed = 5 , maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
-operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27){
+#' @examples operatingtime(AISdata, activityspeed = 5 , maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
+operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29){
 
   # Filtering: study area
   AISdata <- AISdata[AISdata$LON > minLON & AISdata$LON < maxLON
@@ -36,9 +36,8 @@ operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96
   # list of unique MMSI
   MMSIlist <- unique(AISdata$MMSI)
 
-  # Progress check: Calculate the step size for each 10%
-  totao_size <- length(MMSIlist)
-  step_size <- ceiling(length(totao_size) / 10)
+  # Progress check
+  total_size <- length(MMSIlist)
   index <- 1
 
   for (ID in MMSIlist){
@@ -68,15 +67,9 @@ operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96
 
 
     # Progress Check#############
-    # Check if the current iteration is a multiple of the step size
-    if (index %% step_size == 0 || index == totao_size) {
-      # Calculate the percentage completion
-      progress <- round((index / totao_size) * 100)
-
-      # Print the progress
-      cat("\rProgress: ", progress, "%", sep = "")
-      flush.console()  # This is to force the output to be displayed immediately
-    }
+    progress <- round((index / total_size) * 100)
+    cat("\rProgress: ", progress, "%", sep = "")
+    flush.console()  # This is to force the output to be displayed immediately
     index = index + 1
     ############################
 

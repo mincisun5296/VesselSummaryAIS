@@ -9,9 +9,9 @@
 #' @return A data frame with the number and dimension of ships for each ship type
 #' @export
 #'
-#' @examples summarizeship(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)
+#' @examples summarizeship(AISdata, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29)
 #' @examples summarizeship(AISdata)
-summarizeship <- function(AISdata, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27) {
+summarizeship <- function(AISdata, maxLON = -94.5, minLON = -95, maxLAT = 30, minLAT = 29) {
 
   # build new column and specify ship types
   AISdata['shiptype'] <- 0
