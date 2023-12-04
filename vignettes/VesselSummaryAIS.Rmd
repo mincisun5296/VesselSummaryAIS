@@ -36,11 +36,10 @@ library(VesselSummaryAIS)
 ## Introduction of AIS data 
 
 The AIS data consists of vessel and operational information for each signal. This package includes a test data (named AISdata) for users to have a basic understanding of its structure.\
-You may use the command-- `?AISdata` for more information.\
+You may use the command--`data(AISdata)` to load the data and have an overview of its structure, and use the command--`?AISdata` for more information.\
 
 You can also download the AIS data from the [website](https://marinecadastre.gov/ais/), and unzip the file and utilize the following command to load the data:
-`AISdata <- read.csv("dataname.csv", header = T)`
-
+`AISdata <- read.csv("dataname.csv", header = T)`\
 
 ```{r}
 head(AISdata, 3) # shows first 3 rows
@@ -48,7 +47,7 @@ head(AISdata, 3) # shows first 3 rows
 The column--*VesselType* is a code to determine the ship type based on this [ document](https://coast.noaa.gov/data/marinecadastre/ais/VesselTypeCodes2018.pdf), where the ship type includes
 *Cargo, Fishing, Military, Not_available, Others, Passengers, Pleasure, Tanker, and Tugboat*. 
 
-## Function:
+## Functions:
 ### 1.  Vessel Summary within a Specified Geographical Area
 The `summarizeship` function allows user to specify the range of latitude and longitude of the study area, summarizing the number and dimension (length and width) of each ship type.
 ```{r}
@@ -70,7 +69,7 @@ speeddist(AISdata, studyship = 'Fishing', maxLON = -94, minLON = -96, maxLAT = 3
 ```
 
 ### 4. Operating Time Analysis
-The `operatingtime` function  analyzes the cumulative operational time of each distinct ship and ship type. Users can set the speed threshold with the parameter `activityspeed` to define the operation mode. The default speed is 3 knots (meaning only the activity with speed of over 3 knots will be considered as operation mode).
+The `operatingtime` function  analyzes the cumulative operational time for each distinct ship and ship type. Users can set the speed threshold with the parameter `activityspeed` to define the operation mode. The default speed is 3 knots (meaning only the activity with speed of over 3 knots will be considered as operation mode).
 
 From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.
 
