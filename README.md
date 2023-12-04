@@ -1,7 +1,8 @@
 # R Package: VesselSummaryAIS
 ---
-*This package provides vignettes for better illustrations.* 
+*This package provides a vignette for better illustrations. Use the command--`vignette("VesselSummaryAIS") to access the vignette`*
 
+*Please be aware that this function might entail a LENGTHY computational process, especially Function 4: operatingtime(), because it meticulously calculates the time for each vessel. So be careful about the specified region.*
 
 ## Background 
 
@@ -48,8 +49,6 @@ The `speeddist` function creates a histogram illustrating the speed distribution
 The `operatingtime` function  analyzes the cumulative operational time of each distinct ship and ship type. Users have the flexibility to set the operational mode by specifying the speed threshold with the parameter `activityspeed`. The 
 default speed is 3 knots.\
 From the resulting output, the initial data frame showcases the operating time (in minutes) for each vessel, while the subsequent data frame aggregates the total time for each ship type.
-
-*Please be aware that this function might entail a LENGTHY computational process as it meticulously calculates the time for each vessel. So be careful about the specified region.*
 
 **usage:**
 `totaltime = operatingtime(AISdata, activityspeed = 3, maxLON = -94, minLON = -96, maxLAT = 30, minLAT = 27)`
