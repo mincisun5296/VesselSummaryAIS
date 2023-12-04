@@ -36,7 +36,11 @@ operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96
   # list of unique MMSI
   MMSIlist <- unique(AISdata$MMSI)
 
-  num = 0
+  # Progress check: Calculate the step size for each 10%
+  totao_size <- length(MMSIlist)
+  step_size <- ceiling(length(totao_size) / 10)
+  index <- 1
+
   for (ID in MMSIlist){
     # generate an AIS data frame for a certain ship (MMSI is ID)
     specific_MMSI_AISdata <- AISdata[AISdata$MMSI == ID, ]
@@ -61,7 +65,24 @@ operatingtime <- function(AISdata, activityspeed = 3, maxLON = -94, minLON = -96
         activity_df <- rbind(activity_df, c(MMSI = ID, Activity_time = activity_duration, Speed = Avgspeed, Shiptype = shiptype))
       }
     }
+
+
+    # Progress Check#############
+    # Check if the current iteration is a multiple of the step size
+    if (index %% step_size == 0 || index == totao_size) {
+      # Calculate the percentage completion
+      progress <- round((index / totao_size) * 100)
+
+      # Print the progress
+      cat("\rProgress: ", progress, "%", sep = "")
+      flush.console()  # This is to force the output to be displayed immediately
+    }
+    index = index + 1
+    ############################
+
   }
+  cat("\n")  # Move to the next line after the loop is done
+
   activity_df <- activity_df[-1, ] # remove the first row of 0 (it was created while we do the first rows)
 
   # remove those speed is less than 3 knots
